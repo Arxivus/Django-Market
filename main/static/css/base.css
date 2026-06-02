@@ -1,0 +1,238 @@
+@font-face {
+  font-family: "Fregat Regular";
+  src: local("Fregat Regular"),
+    url("../public/fonts/Fregat.woff2") format("woff2"),
+    url("../public/fonts/Fregat.woff") format("woff");
+  font-weight: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Fregat Regular", sans-serif;
+  margin: 0;
+}
+
+
+:root {
+    --fc-primary: #212121;
+    --fc-secondary: #FFF;
+    --fc-spec-text: #6B6E6E;
+
+    --dark-color: #1C1C1C;
+    --main-color: #E2A42B;
+    --main-color-lite: #FFC044;
+    --lite-color: #F9F9FB;
+    --bg-color: #FFF;
+
+    --border-radius-value: 8px;
+    --border-radius-second: 16px;
+
+    --shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+p, h1, h2, h3 {
+    margin: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    padding: 50px 40px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    width: max-content;
+    padding: 18px 30px;
+    color: var(--fc-primary);
+    background-color: var(--bg-color);
+    border: 1px solid var(--dark-color);
+    border-radius: var(--border-radius-second);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: "Fregat Regular", sans-serif;
+    letter-spacing: 1px;
+    transition: 0.3s background-color ease;
+}
+
+button:hover {
+    background-color: var(--main-color);
+}
+
+button a:hover {
+    text-decoration: none;
+    color: var(--fc-primary);
+}
+
+button svg {
+    height: 24px;
+    width: 24px;
+}
+
+button svg path {
+    stroke-width: 2.5;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.4s, text-decoration 0.4s;
+}
+
+a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.invalid {
+    color: red;
+    font-size: var(--lower-font-size);
+}
+
+header {
+    background-color: #1C1C1C;
+    color: var(--lite-color);
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-content img {
+    width: 120px;
+    height: 120px;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-title-main {
+    background-color: var(--main-color);
+    padding: 5px 100px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.header-title h1 {
+    font-size: 38px;
+    filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8));
+}
+
+.header-title p {
+    font-size: 20px;
+    color: var(--main-color);
+}
+
+.title-block {
+    width: max-content;
+    padding: 18px 120px;
+    background-color: var(--dark-color);
+    border-radius: var(--border-radius-second);
+}
+
+.title-block h2 {
+    margin: 0;
+    color: var(--fc-secondary);
+}
+
+/* ====================================================== */
+
+footer {
+    background-color: var(--dark-color);
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer-content-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content-block,
+.footer-copyright {
+    color: var(--lite-color);
+}
+
+.footer-content-block p {
+    font-size: 22px;
+    margin-bottom: 8px;
+
+}
+
+.footer-copyright {
+    display: flex;
+    align-self: center;
+    gap: 5px;
+}
+
+.footer-copyright img {
+    width: 18px;
+}
+
+.footer-copyright p {
+    font-size: 18px;
+}
+
+
+.css-19bb58m {
+    padding: 0;
+    margin: 0;
+}
+
+.css-hlgwow {
+    padding: 0;
+}

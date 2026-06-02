@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/works.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="works-block">
+        <div class="title-block">
+            <h2>Наши работы</h2>
+        </div>
+        <ul class="works-list">
+            {% for model in models %}
+            <li>
+                <img class="works-list-item" src="{{ model.image.url }}" alt="{{ model.name }}">
+            </li>
+            {% endfor %}
+        </ul>
+        <button>
+            <a href="/order">Сделать заказ</a>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 17L21 12L16 7M21 12H3" stroke="#212121" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+</div>
+{% endblock %}

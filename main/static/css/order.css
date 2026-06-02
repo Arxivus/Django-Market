@@ -1,0 +1,94 @@
+/* ====================================================== */
+
+.make-order-section {
+    background-color: var(--main-color);
+}
+
+.make-order-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.make-order-block h2 {
+    color: var(--lite-color);
+}
+
+/* ====================================================== */
+
+.feedback-section {
+    background-color: var(--main-color);
+}
+
+.feedback-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-block h2 {
+    color: var(--lite-color);
+}
+
+.feedback-block-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.feedback-cards-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--lite-color);
+    border-radius: var(--border-radius-value);
+    padding: 20px 25px;
+}
+
+form h3 {
+    font-size: 30px;
+    font-weight: normal;
+    color: var(--dark-color);
+}
+
+form input,
+form textarea,
+form select {
+    font-size: var(--medium-font-size);
+    border: none;
+    border-radius: var(--border-radius-value);
+    width: 450px;
+    padding: 8px 15px;
+    background-color: #D9D9D9;
+    box-sizing: border-box;
+    font-family: 'Fregat Regular';
+}
+
+form button {
+    width: max-content;
+    margin-top: 15px;
+    padding: 8px 75px;
+    color: var(--lite-color);
+    background-color: var(--dark-color);
+    font-size: var(--medium-font-size);
+    border: 1px solid var(--lite-color);
+    border-radius: var(--border-radius-value);
+    transition: color 0.4s, background-color 0.4s, border 0.4s;
+}
+
+form button:hover {
+    color: var(--dark-color);
+    background-color: var(--lite-color);
+    border: 1px solid var(--dark-color);
+}

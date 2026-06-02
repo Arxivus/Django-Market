@@ -1,0 +1,24 @@
+
+.works-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+    margin-top: 200px;
+    margin-bottom: 300px;
+    padding: 0px 30px;
+}
+
+.works-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.works-list-item {
+    outline: 2px solid var(--dark-color);
+    border-radius: var(--border-radius-second);
+    max-width: 262px;
+    max-height: 262px;
+    box-shadow: var(--shadow);
+}
