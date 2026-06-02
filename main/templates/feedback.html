@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/feedback.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="feedback-block">
+        <div class="feedback-block-info">
+            <div class="title-block">
+                <h2>Фото покупателей</h2>
+            </div>
+            <p>Наши приманки прошли многочисленные тесты и пришлись по нраву рыбе</p>
+        </div>
+        <div>
+            <ul class="review-list">
+                {% for review in reviews %}
+                    <li class="review-block">
+                        <img class="review-list-item" src="{{ review.image.url }}">
+                        <p class="review-text">{{ review.text }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

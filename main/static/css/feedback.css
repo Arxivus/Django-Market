@@ -1,0 +1,55 @@
+.feedback-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    margin: 200px 0px;
+}
+
+.feedback-block-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.feedback-block-info p {
+    max-width: 500px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.review-list img {
+    min-width: 100%;
+    max-width: 800px;
+    max-height: 550px;
+    border-radius: 16px;
+    object-fit: fill;
+}
+
+.review-block {
+    position: relative;
+    display: flex;
+}
+
+.review-text {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    padding: 0px 50px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    margin: auto;
+    width: 600px;
+    font-size: 24px;
+    text-align: center;
+    color: var(--fc-secondary);
+}
