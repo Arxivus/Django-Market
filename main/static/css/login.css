@@ -79,3 +79,27 @@ form p span,
 form ul {
     display: none;
 }
+
+@media screen and (max-width: 993px) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .container {
+        width: 540px;
+    }
+
+}
+
+@media screen and (max-width: 391px) {
+    .container {
+        width: 100%;
+    }
+
+    button {
+        padding: 10px 32px;
+    }
+
+}

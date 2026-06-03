@@ -10,9 +10,7 @@ from django.contrib import messages
 from .forms import OrderForm, ReviewForm
 
 def home(request):
-    if not request.user.is_authenticated:
-        return redirect('login')
-    return render(request, 'index.html')
+    return render(request, 'home.html')
 
 
 def worksPage(request):

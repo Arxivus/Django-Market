@@ -38,6 +38,25 @@
                             <h1>Хищные пасти</h1>
                         </div>
                     </div>
+                    {% if user.is_authenticated %}
+                    <div class="user-block">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 21C20 18.2386 16.4183 16 12 16C7.58172 16 4 18.2386 4 21M12 13C9.23858 13 7 10.7614 7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8C17 10.7614 14.7614 13 12 13Z"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>{{ user.username }}</p>
+                        <p>|</p>
+                        <form method="post" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <button class="logout-btn" type="submit">Выйти</button>
+                        </form>
+                    </div>
+                    {% else %}
+                    <div class="user-block">
+                        <a href="/accounts/login">Войти</a>
+                    </div>
+                    {% endif %}
                     <nav class="header-nav">
                         <ul class="header-nav-list">
                             <li>
@@ -62,31 +81,6 @@
             </div>
         </div>
     </header>
-    <script>
-        // Получаем элементы
-        const burgerBtn = document.getElementById('burgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        // Открыть/закрыть при клике на бургер
-        burgerBtn.addEventListener('click', function () {
-            mobileMenu.classList.toggle('open');
-        });
-
-        // Закрыть меню при клике на ссылку
-        const menuLinks = document.querySelectorAll('.mobile-menu-item');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                mobileMenu.classList.remove('open');
-            });
-        });
-
-        // Закрыть меню при клике вне его
-        document.addEventListener('click', function (event) {
-            if (!mobileMenu.contains(event.target) && !burgerBtn.contains(event.target)) {
-                mobileMenu.classList.remove('open');
-            }
-        });
-    </script>
 
     <main>
         {% block content %}
@@ -111,6 +105,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="{% static 'js/menu.js' %}"></script>
 </body>
 
 </html>

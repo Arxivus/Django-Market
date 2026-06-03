@@ -20,27 +20,31 @@
                 {% csrf_token %}
                 <p>Оставьте заявку и мы свяжемся с вами в ближайшее время!</p>
 
-                {% if messages %}
-                    {% for message in messages %}
-                        {% if 'order' in message.extra_tags %}
-                            <div class="success-message">{{ message }}</div>
-                            {% endif %}
-                    {% endfor %}
-                {% endif %}
+                    {% if user.is_authenticated %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if 'order' in message.extra_tags %}
+                                <div class="success-message">{{ message }}</div>
+                                {% endif %}
+                        {% endfor %}
+                    {% endif %}
 
-                <input type="hidden" name="form_type" value="order_form">
-                {% for field in order_form %}
-                {{ field }}
-                {% if field.errors %}
-                <ul class="errorlist">
-                    {% for error in field.errors %}
-                    <li>{{ error }}</li>
+                    <input type="hidden" name="form_type" value="order_form">
+                    {% for field in order_form %}
+                    {{ field }}
+                    {% if field.errors %}
+                    <ul class="errorlist">
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                     {% endfor %}
-                </ul>
-                {% endif %}
-                {% endfor %}
 
-                <button type="submit">Отправить заявку</button>
+                    <button type="submit">Отправить заявку</button>
+                {% else %}
+                    <p>Войдите в свой аккаунт, чтобы сделать заказ!</p>
+                {% endif %}
             </form>
         </div>
         <div class="separator"></div>
@@ -49,19 +53,23 @@
                 {% csrf_token %}
                 <p>Оставьте отзыв о приманках. Это очень важно для нас!</p>
 
-                {% if messages %}
-                    {% for message in messages %}
-                        {% if 'review' in message.extra_tags %}
-                            <div class="success-message">{{ message }}</div>
-                            {% endif %}
-                    {% endfor %}
-                {% endif %}
+                {% if user.is_authenticated %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if 'review' in message.extra_tags %}
+                                <div class="success-message">{{ message }}</div>
+                                {% endif %}
+                        {% endfor %}
+                    {% endif %}
 
-                <input type="hidden" name="form_type" value="review_form">
-                <textarea minlength="10" name="text" placeholder="Напишите его тут" required></textarea>
-                {{ form.text }}
-                <input class="photo-button" type="file" name="image" accept="image/*">
-                <button type="submit">Отправить отзыв</button>
+                    <input type="hidden" name="form_type" value="review_form">
+                    <textarea minlength="10" name="text" placeholder="Напишите его тут" required></textarea>
+                    {{ form.text }}
+                    <input class="photo-button" type="file" name="image" accept="image/*">
+                    <button type="submit">Отправить отзыв</button>
+                {% else %}
+                    <p>Войдите в свой аккаунт, чтобы оставить отзыв на нашем сайте!</p>
+                {% endif %}
             </form>
         </div>
     </div>

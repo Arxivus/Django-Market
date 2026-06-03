@@ -151,10 +151,6 @@
         justify-content: center;
     }
 
-    .header-info {
-        gap: 30px;
-    }
-
     header img {
         display: none;
     }
@@ -226,6 +222,11 @@
         width: 100%;
     }
 
+    .about-us-block p {
+        text-indent: 0;
+        text-align: center;
+    }
+
     header {
         position: fixed;
         top: 0;
@@ -242,6 +243,8 @@
 
     .header-content {
         justify-content: space-between;
+        gap: 16px;
+        padding: 0 25px;
     }
 
     .header-info {
@@ -249,11 +252,11 @@
     }
 
     .header-title-main {
-        padding: 16px 35px;
+        padding: 16px;
     }
 
     .header-title h1 {
-        font-size: 28px;
+        font-size: 22px;
     }
 
     .header-title p {

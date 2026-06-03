@@ -61,7 +61,7 @@ main .container {
     gap: 30px;
 }
 
-form {
+.forms-block form {
     box-sizing: border-box;
     max-width: 600px;
     display: flex;
@@ -74,15 +74,15 @@ form {
     box-shadow: var(--shadow);
 }
 
-form h3 {
+.forms-block form h3 {
     font-size: 30px;
     font-weight: normal;
     color: var(--dark-color);
 }
 
-form input,
-form textarea,
-form select {
+.forms-block form input,
+.forms-block form textarea,
+.forms-block form select {
     font-size: 20px;
     border: none;
     border-radius: var(--border-radius-second);
@@ -94,7 +94,7 @@ form select {
     font-family: 'Fregat Regular';
 }
 
-form button {
+.forms-block form button {
     width: max-content;
     margin-top: 15px;
     padding: 10px 75px;
@@ -105,7 +105,7 @@ form button {
     transition: color 0.3s, background-color 0.3s, border 0.3s;
 }
 
-form button:hover {
+.forms-block form button:hover {
     color: var(--dark-color);
     background-color: var(--lite-color);
     border: 1px solid var(--dark-color);
@@ -133,7 +133,7 @@ form button:hover {
         gap: 32px;
     }
 
-    form button {
+    .forms-block form button {
         padding: 10px 32px;
     }
 
@@ -141,9 +141,9 @@ form button:hover {
         font-size: 16px;
     }
 
-    form input,
-    form textarea,
-    form select {
+    .forms-block form input,
+    .forms-block form textarea,
+    .forms-block form select {
         font-size: 14px;
     }
 }

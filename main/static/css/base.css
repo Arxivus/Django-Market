@@ -146,6 +146,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
 }
 
 .header-title {
@@ -238,9 +239,53 @@ footer {
     padding: 0;
 }
 
+.user-block {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.user-block form {
+    padding: 0;
+    width: max-content;
+}
+
+.logout-btn {
+    background-color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    transition: color 0.4s, text-decoration 0.4s;
+}
+
+.user-block a {
+    font-size: 18px;
+}
+
+.logout-btn:hover {
+    background-color: inherit;
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 391px) {
     .title-block {
         padding: 18px 48px;
+    }
+
+    button {
+        padding: 10px 32px;
+    }
+
+    .user-block {
+        flex-direction: column;
+    }
+
+    .user-block p {
+        display: none;
     }
 
 }

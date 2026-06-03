@@ -1,13 +1,16 @@
 {% extends "layout.html" %}
 {% load static %}
 
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
 
 {% block content %}
 <section id="about-us" class="about-us-section">
     <div class="container">
         <div class="about-us-block">
             <div class="about-us-info">
-                <h1>"Хищные пасти" — Силиконовые приманки</h1>
+                <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">"Хищные пасти" — Силиконовые приманки</h1>
                 <p> Силиконовые приманки "Хищные пасти" ручной работы для лайта, микроджига и мормышинга на заказ.
                     Большое разнообразие цветов и моделей</p>
                 <button>
@@ -21,7 +24,7 @@
         </div>
     </div>
 </section>
-<section class="advantages-section">
+<section data-aos="fade-up" data-aos-duration="1000" class="advantages-section">
     <div class="container">
         <div class="advantages-block">
             <h2>Почему мы?</h2>
@@ -82,7 +85,7 @@
         </div>
     </div>
 </section>
-<section>
+<section data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
         <div class="links-block">
             <div class="link-block">
@@ -114,6 +117,10 @@
         </div>
     </div>
 </section>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init(); 
+</script>
 {% endblock %}
 
 </html>

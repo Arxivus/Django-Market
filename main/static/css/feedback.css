@@ -60,9 +60,14 @@
         font-size: 14px;
     }
 
-    .review-list img {
+    .review-list {
         box-sizing: border-box;
         padding: 0 25px;
+    }
+
+    .review-list img {
+        box-sizing: border-box;
+        height: 225px;
     }
 
     .feedback-block {
