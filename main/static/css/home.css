@@ -29,6 +29,10 @@
     color: var(--fc-secondary);
 }
 
+.about-us-info a {
+    text-decoration: none;
+}
+
 .about-us-info h1 {
     font-size: 50px;
 }

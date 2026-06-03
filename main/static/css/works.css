@@ -9,6 +9,10 @@
     padding: 0px 30px;
 }
 
+.works-block a {
+    text-decoration: none;
+}
+
 .works-list {
     display: flex;
     justify-content: center;
