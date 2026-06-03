@@ -40,10 +40,11 @@ p, h1, h2, h3 {
 .container {
     width: 1200px;
     margin: 0 auto;
+    flex: 1;
 }
 
 footer {
-    padding: 20px 40px;
+    padding: 20px 25px;
 }
 
 button {
@@ -57,7 +58,7 @@ button {
     background-color: var(--bg-color);
     border: 1px solid var(--dark-color);
     border-radius: var(--border-radius-second);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
     font-family: "Fregat Regular", sans-serif;
@@ -66,7 +67,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--main-color);
+    background-color: var(--main-color-lite);
 }
 
 button a:hover {
@@ -235,4 +236,11 @@ footer {
 
 .css-hlgwow {
     padding: 0;
+}
+
+@media screen and (max-width: 391px) {
+    .title-block {
+        padding: 18px 48px;
+    }
+
 }

@@ -1,43 +1,69 @@
-<section id="order" class="make-order-section">
-    <div class="container">
-        <div class="make-order-block">
+{% extends "layout.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="forms-block">
+        <div class="title-block">
             <h2>Заказать приманки</h2>
-            <!-- onSubmit={(e)=> handleOrderFormSubmit(e, selectedColor, selectedModel)} -->
-            <form class="order-form" action="POST">
-                <input name="contact" type="text" placeholder="Ваш email" required>
-                <!-- <Select options={models} styles={customStyles} onChange={setSelectedModel}
-                            placeholder="Выберите модель приманки" required />
-                        <Select options={colors} styles={customStyles} onChange={setSelectedColor}
-                            placeholder="Выберите цвет" required /> -->
-                <input name="count" type="number" placeholder="Колличество упаковок" min="1" max="12" required>
-                <button type="submit">Отправить</button>
+        </div>
+        <div class="make-order-block">
+            <form class="order-form" method="post">
+                {% csrf_token %}
+                <p>Оставьте заявку и мы свяжемся с вами в ближайшее время!</p>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if 'order' in message.extra_tags %}
+                            <div class="success-message">{{ message }}</div>
+                            {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                <input type="hidden" name="form_type" value="order_form">
+                {% for field in order_form %}
+                {{ field }}
+                {% if field.errors %}
+                <ul class="errorlist">
+                    {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endfor %}
+
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+        <div class="separator"></div>
+        <div class="feedback-block-info">
+            <form class="feedback-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>Оставьте отзыв о приманках. Это очень важно для нас!</p>
+
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if 'review' in message.extra_tags %}
+                            <div class="success-message">{{ message }}</div>
+                            {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                <input type="hidden" name="form_type" value="review_form">
+                <textarea minlength="10" name="text" placeholder="Напишите его тут" required></textarea>
+                {{ form.text }}
+                <input class="photo-button" type="file" name="image" accept="image/*">
+                <button type="submit">Отправить отзыв</button>
             </form>
         </div>
     </div>
-</section>
-<section id="feedback" class="feedback-section">
-    <div class="container">
-        <div class="feedback-block">
-            <h2>Отзывы клиентов</h2>
-            <div class="feedback-block-info">
-                <ul class="feedback-cards-list">
-                    <!-- <Card imageUrl='/reactproject/images/fisherman_1.png' clientName='Анна'
-                                cardText='Червяк тема рабочая 🪱👍🎣'></Card>
-                            <Card imageUrl='/reactproject/images/fisherman_2.png' clientName='Олег'
-                                cardText='Приманки 🔥 работают!!! Рекомендуем!!!'></Card>
-                            <Card imageUrl='/reactproject/images/fisherman_3.png' clientName='Евгений'
-                                cardText='Хороший силикон - хороший улов! Продавец вежливый, отправил быстро и упаковал хорошо!'>
-                            </Card> -->
-                </ul>
-                <!-- onSubmit={handleFeedbackFormSubmit} -->
-                <form class="feedback-form" action="POST">
-                    <h3>Оставьте отзыв!</h3>
-                    <input name="name" type="text" placeholder="Введите ваше имя" required>
-                    <textarea type="text" placeholder="Оставьте отзыв" pattern="[A-Za-zА-Яа-яЁё0-9\s]+" minlength="10"
-                        maxlength="100" required></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
+{% endblock %}

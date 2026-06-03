@@ -11,6 +11,7 @@
 
 .works-list {
     display: flex;
+    justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
@@ -21,4 +22,13 @@
     max-width: 262px;
     max-height: 262px;
     box-shadow: var(--shadow);
+}
+
+@media screen and (max-width: 391px) {
+    .works-block {
+        margin: 128px 0 64px 0;
+        padding: 0;
+        gap: 32px;
+    }
+
 }

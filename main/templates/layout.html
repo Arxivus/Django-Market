@@ -15,66 +15,102 @@
 </head>
 
 <body>
-    <div>
-        <header>
-            <div class="container">
-                <div class="header-content">
-                    <img src="{% static 'images/logo.png' %}">
-                    <div class="header-info">
-                        <div class="header-title">
-                            <div class="header-title-main">
-                                <h1>Хищные пасти</h1>
-                            </div>
-                        </div>
-                        <nav class="header-nav">
-                            <ul class="header-nav-list">
-                                <li>
-                                    <a href="/">О нас </a>
-                                </li>
-                                <li>
-                                    <a href="/works">Приманки</a>
-                                </li>
-                                <li>
-                                    <a href="/feedback">Отзывы</a>
-                                </li>
-                                <li>
-                                    <a href="/order">Заказать</a>
-                                </li>
-                                <li>
-                                    <a href="/blog">Блог</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <img src="{% static 'images/logo2.png' %}">
-                </div>
-            </div>
-        </header>
 
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
-
-        <footer id="contacts">
-            <div class="container">
-                <div class="footer-block">
-                    <div class="footer-content-block">
-                        <div>
-                            <h2>Контакты</h2>
-                            <p>группа VK: https://vk.com/hishnie_pasti</p>
-                            <p>телефон: +7 950 55-55-555</p>
-                        </div>
-                        <img src="{% static 'images/text-logo.png' %}">
-                    </div>
-                    <div class="footer-copyright">
-                        <img src="{% static 'images/copyright.png' %}">
-                        <p>2025 Все права защищены</p>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="menu-block">
+                    <button class="burger-menu" id="burgerBtn">☰</button>
+                    <div class="mobile-menu" id="mobileMenu">
+                        <a href="/" class="mobile-menu-item">О нас</a>
+                        <a href="/works" class="mobile-menu-item">Приманки</a>
+                        <a href="/feedback" class="mobile-menu-item">Отзывы</a>
+                        <a href="/order" class="mobile-menu-item">Заказать</a>
+                        <a href="/blog" class="mobile-menu-item">Блог</a>
                     </div>
                 </div>
+
+
+                <img src="{% static 'images/logo.png' %}">
+                <div class="header-info">
+                    <div class="header-title">
+                        <div class="header-title-main">
+                            <h1>Хищные пасти</h1>
+                        </div>
+                    </div>
+                    <nav class="header-nav">
+                        <ul class="header-nav-list">
+                            <li>
+                                <a href="/">О нас </a>
+                            </li>
+                            <li>
+                                <a href="/works">Приманки</a>
+                            </li>
+                            <li>
+                                <a href="/feedback">Отзывы</a>
+                            </li>
+                            <li>
+                                <a href="/order">Заказать</a>
+                            </li>
+                            <li>
+                                <a href="/blog">Блог</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <img src="{% static 'images/logo2.png' %}">
             </div>
-        </footer>
-    </div>
+        </div>
+    </header>
+    <script>
+        // Получаем элементы
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        // Открыть/закрыть при клике на бургер
+        burgerBtn.addEventListener('click', function () {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Закрыть меню при клике на ссылку
+        const menuLinks = document.querySelectorAll('.mobile-menu-item');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Закрыть меню при клике вне его
+        document.addEventListener('click', function (event) {
+            if (!mobileMenu.contains(event.target) && !burgerBtn.contains(event.target)) {
+                mobileMenu.classList.remove('open');
+            }
+        });
+    </script>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="footer-block">
+                <div class="footer-content-block">
+                    <div>
+                        <h2>Контакты</h2>
+                        <p>группа VK: https://vk.com/hishnie_pasti</p>
+                        <p>телефон: +7 950 55-55-555</p>
+                    </div>
+                    <img src="{% static 'images/text-logo.png' %}">
+                </div>
+                <div class="footer-copyright">
+                    <img src="{% static 'images/copyright.png' %}">
+                    <p>2025 Все права защищены</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -15,6 +15,12 @@
     font-size: 22px;
 }
 
+.menu-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .burger-menu {
   display: none;
   font-size: 45px;
@@ -23,6 +29,15 @@
   cursor: pointer;
   z-index: 1001;
   color: var(--main-color);
+}
+
+.burger-menu {
+  padding: 0 25px;
+  height: 60px;
+}
+
+.burger-menu:hover {
+  background-color: inherit;
 }
 
 .mobile-menu {
@@ -41,7 +56,7 @@
 }
 
 .mobile-menu a {
-    font-size: var(--lower-font-size);
+    font-size: 18px;
 }
 
 .mobile-menu.open {
@@ -50,7 +65,7 @@
 }
 
 .mobile-menu-item {
-  padding: 12px 0;
+  padding: 16px 0;
   border-bottom: 1px solid #eee;
   text-decoration: none;
   color: #333;

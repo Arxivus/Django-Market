@@ -31,6 +31,7 @@ class Review(models.Model):
     text = models.TextField(verbose_name="Текст отзыва")
     image = models.ImageField(upload_to='reviews/', blank=True, null=True, verbose_name="Изображение")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    status = models.BooleanField(default=False, verbose_name="Опубликован")
     
     class Meta:
         verbose_name = "Отзыв"
